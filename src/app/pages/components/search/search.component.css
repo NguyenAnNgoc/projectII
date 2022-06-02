@@ -1,0 +1,23 @@
+.custom-input{
+    width: 500px;
+    height: 40px;
+    border: solid 1px grey;
+    border-radius: 5px 0 0 5px;
+    padding: 5px 10px;
+}
+
+.icon-search{
+    width: 40px;
+    height: 40px;
+    border: solid 1px grey;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 1px;
+}
+
+.logo-icon{
+    margin-left: 50px;
+}
+
+.custom-hr{
+    width: 90%;
+}

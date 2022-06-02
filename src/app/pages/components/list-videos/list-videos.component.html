@@ -1,0 +1,29 @@
+<app-search [keySearch]="keySearch"></app-search>
+
+<div class="item-video" *ngFor="let item of videos">
+    <div class="row custom-video" style="cursor: pointer" (click)="onClickItem(item)">
+      <div class="col-md-3">
+        <img
+          src="{{ item.snippet.thumbnails.medium.url }}"
+          alt=""
+          max-width="360"
+        />
+      </div>
+      <div class="col-md-6">
+        <p style="font-size: 18px;">{{ item.snippet.title }}</p>
+        <p style="font-size: 13px; margin-top: -10px;">
+          {{ item.snippet.channelTitle }}
+        </p>
+        <p style="font-size: 13px; margin-top: -10px;">
+          {{ item.snippet.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center pt-5">
+    <button type="button" class="btn btn-primary" (click)="onClickPage()">
+      See more
+    </button>
+  </div>
+  <hr class="bg-dark" />
+<div class="p-3 text-center">CopyRight by NGUYEN AN NGOC</div>

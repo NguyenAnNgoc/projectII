@@ -1,6 +1,6 @@
 <app-search></app-search>
 <div class="grid-container">
-  <div class="" *ngFor="let item of videos">
+  <div class="" *ngFor="let item of videos" style="cursor: pointer" (click)="onClickItem(item)">
     <img src="{{ item.snippet.thumbnails.high.url }}" alt="" width="360" />
     <p class="content-video" style="font-size: 18px">
       {{ item.snippet.title }}

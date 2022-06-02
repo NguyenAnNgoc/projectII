@@ -12,17 +12,17 @@
   <!-- Links -->
   <ul style="width: 100%" class="m-0 text-center">
     <div style="width: 100%">
-      <form (ngSubmit)="onClick(keySearch.value)" style="width: 100%">
+      <div  style="width: 100%">
         <input
           class="input custom-input"
           type="text"
           placeholder="Tìm kiếm..."
-          #keySearch
+          [(ngModel)] = "keySearch"
         />
-        <button class="button icon-search" type="submit">
+        <button class="button icon-search" (click)="onClick()">
           <i class="fa fa-search"></i>
         </button>
-      </form>
+      </div>
     </div>
   </ul>
 </nav>

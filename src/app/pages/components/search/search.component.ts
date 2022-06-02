@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,15 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-  public keySearch: any;
+  @Input() keySearch: any;
   public maxResult = 15;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  onClick(keySearch: any) {
-    this.keySearch = keySearch;
-    this.router.navigateByUrl('/youtube/search/' + keySearch);
+  onClick() {
+    if(this.keySearch){     
+    this.router.navigateByUrl('/youtube/search/' + this.keySearch);}
   }
 
   homeClick() {

@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VideoService {
   private url = 'https://www.googleapis.com/youtube/v3/';
-  private key = 'AIzaSyA0KNS1PgNmqQa-09bngllGCG_brwHfT6s';
+  // private key = 'AIzaSyA0KNS1PgNmqQa-09bngllGCG_brwHfT6s';
+  private key = 'AIzaSyC0kxyLKqKnsfOKbbXFZyghynJGc__yZj0';
 
   constructor(private http: HttpClient) {}
 

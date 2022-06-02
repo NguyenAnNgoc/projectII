@@ -14,8 +14,10 @@ export class HomePageComponent implements OnInit {
   public p: number = 1;
   public type = '';
   public maxResults = 50;
+  public pageToken = '';
   public value = {
     items: [],
+    nextPageToken: '',
   };
   constructor(
     private videoService: VideoService,
@@ -31,10 +33,15 @@ export class HomePageComponent implements OnInit {
     this.type = type;
     return this.activatedRoute.params.subscribe((param) => {
       this.videoService
-        .getVideos(param['key'], this.type, this.maxResults.toString())
+        .getVideos(
+          param['key'],
+          this.type,
+          this.maxResults.toString(),
+          this.pageToken.toString()
+        )
         .subscribe((result) => {
           this.value = { ...this.value, ...result };
-          this.videos = this.value.items;
+          this.videos = [...this.videos, ...this.value.items];
         });
     });
   }
@@ -44,7 +51,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onClickPage() {
-    this.maxResults += 7;
+    this.pageToken = this.value.nextPageToken;
     this.getVideos(this.type);
   }
 }

@@ -10,7 +10,12 @@ export class VideoService {
 
   constructor(private http: HttpClient) {}
 
-  getVideos(keySearch: string, order: string, maxResults: string) {
+  getVideos(
+    keySearch: string,
+    order: string,
+    maxResults: string,
+    pageToken: string
+  ) {
     return this.http.get(this.url + 'search', {
       params: {
         part: 'snippet',
@@ -19,6 +24,7 @@ export class VideoService {
         maxResults: maxResults,
         type: 'video',
         order: order,
+        pageToken: pageToken,
       },
     });
   }

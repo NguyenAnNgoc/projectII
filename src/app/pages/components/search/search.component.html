@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark mt-2">
   <!-- Brand/logo -->
-  <h1
-    class="navbar-brand logo-icon"
-    style="color: red; cursor: pointer; font-size: 30px"
-    (click)="homeClick()"
-  >
+  <h1 class="navbar-brand logo-icon" style="color: red; cursor: pointer; font-size: 30px" (click)="homeClick()">
     <i class="fa fa-solid fa-tv"></i>
     FATube
   </h1>
@@ -12,13 +8,8 @@
   <!-- Links -->
   <ul style="width: 100%" class="m-0 text-center">
     <div style="width: 100%">
-      <div  style="width: 100%">
-        <input
-          class="input custom-input"
-          type="text"
-          placeholder="Tìm kiếm..."
-          [(ngModel)] = "keySearch"
-        />
+      <div style="width: 100%">
+        <input class="input custom-input" type="text" placeholder="Tìm kiếm..." [(ngModel)]="keySearch" />
         <button class="button icon-search" (click)="onClick()">
           <i class="fa fa-search"></i>
         </button>

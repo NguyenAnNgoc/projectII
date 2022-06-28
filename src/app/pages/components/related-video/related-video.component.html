@@ -1,0 +1,14 @@
+<b style="color: dimgray; font-size: 20px;">Video liên quan</b>
+<div class="item-video" *ngFor="let item of videos">
+    <div class="row" style="cursor: pointer" (click)="onClickItem(item)">
+        <div style="width: 180px; margin-top: 10px;">
+            <img src="{{ item?.snippet?.thumbnails?.medium?.url }}" alt="" width="168" />
+        </div>
+        <div class="col-md-7">
+            <h6 style="font-size: 14px; margin-top: 10px; ">{{ item?.snippet?.title }}</h6>
+            <p style="font-size: 11px; margin-top: -10px;">
+                {{ item?.snippet?.channelTitle }}
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div>
+    <div class="row" *ngFor="let item of comment" style="margin: 15px 0px 15px 0px;">
+        <div style="width: 40px;">
+            <img [src]="item.snippet.topLevelComment.snippet.authorProfileImageUrl" alt="avatar" width="40" height="40"
+                style="border-radius: 50%" />
+        </div>
+        <div style="width: 650px; margin-left: 20px;">
+            <h6 style="display: inline-block; margin-right: 10px;">
+                {{ item.snippet.topLevelComment.snippet.authorDisplayName }}
+            </h6>
+            <span style="color: darkgrey; font-size: 12px;">{{
+                item.snippet.topLevelComment.snippet.publishedAt
+                | date: 'hh:mm dd-MM-yyyy'
+                }}</span>
+            <p style="color: #111111; font-size: 14px; margin-bottom: 5px;">
+                {{ item.snippet.topLevelComment.snippet.textDisplay }}
+            </p>
+            <span style="color: darkgrey;">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <span style="margin-right: 30px;">
+                    {{
+                    item.snippet.topLevelComment.snippet.likeCount
+                    }}</span>
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+</div>

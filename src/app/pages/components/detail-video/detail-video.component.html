@@ -1,62 +1,56 @@
-<app-search ></app-search>
+<app-search></app-search>
 <div class="content">
-    <div class="row">
-      <div style="width: 60%;">
-        <div style="text-align: right">
-          <iframe
-            width="{{width}}"
-            height="{{height}}"
-            [src]="urlVideo"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div [ngStyle]="{'width': width + 'px', 'float': 'right', 'padding-top': '20px'}">
-          <h5>{{ item?.snippet.title }}</h5>
-          <p style="color: #606060; font-size: 16px;">
-            {{ item?.statistics.viewCount }} lượt xem
-          </p>
-          <span style="color: darkgrey">
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-            <span style="margin-right: 30px;">
-              {{ item?.statistics.likeCount }}</span
-            >
-            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-            <span style="margin-right: 30px;">
-              {{ item?.statistics.dislikeCount}}</span
-            >
-          </span>
-          <hr style="margin-top: 0px;" />
-          <div class="row">
-            <div style="width: 50px; margin-left: 10px;">
-              <img
-                src="https://yt3.ggpht.com/-99RxcM6rQLo/AAAAAAAAAAI/AAAAAAAAAAA/X5Tbic-rx38/s28-c-k-no-mo-rj-c0xffffff/photo.jpg"
-                alt="Avater"
-                width="50"
-                height="50"
-                style="display: inline-block; border-radius: 50%"
-              />
-            </div>
-            <div [ngStyle]="{'padding-left': '20px', 'width': (width - 70) + 'px'}">
-              <h5>{{ item?.snippet.channelTitle }}</h5>
-              <p style="font-size: 16px; color: dimgray;">
-                Xuất bản ngày {{ item?.snippet.publishedAt | date: 'dd-MM-yyyy' }}
-              </p>
-              <p
-                style="padding: 10px 50px 0px 0px; height: 200px; overflow: auto"
-              >
-                {{ item?.snippet.description }}
-              </p>
-            </div>
+  <div class="row">
+    <div style="width: 60%;">
+      <div style="text-align: right">
+        <iframe width="{{width}}" height="{{height}}" [src]="urlVideo" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div [ngStyle]="{'width': width + 'px', 'float': 'right', 'padding-top': '20px'}">
+        <h5>{{ item?.snippet.title }}</h5>
+        <p style="color: #606060; font-size: 16px;">
+          {{ item?.statistics.viewCount }} lượt xem
+        </p>
+        <span style="color: darkgrey">
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+          <span style="margin-right: 30px;">
+            {{ item?.statistics.likeCount }}</span>
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+          <span style="margin-right: 30px;">
+            {{ item?.statistics.dislikeCount}}</span>
+        </span>
+        <hr style="margin-top: 0px;" />
+        <div class="row">
+          <div style="width: 50px; margin-left: 10px;">
+            <img
+              src="https://yt3.ggpht.com/-99RxcM6rQLo/AAAAAAAAAAI/AAAAAAAAAAA/X5Tbic-rx38/s28-c-k-no-mo-rj-c0xffffff/photo.jpg"
+              alt="Avater" width="50" height="50" style="display: inline-block; border-radius: 50%" />
           </div>
-          <hr />
-          <p style="font-size: 20px;">
-            {{ item?.statistics.commentCount}} nhận xét
-          </p>
-          <hr />
+          <div [ngStyle]="{'padding-left': '20px', 'width': (width - 70) + 'px'}">
+            <h5>{{ item?.snippet.channelTitle }}</h5>
+            <p style="font-size: 16px; color: dimgray;">
+              Xuất bản ngày {{ item?.snippet.publishedAt | date: 'dd-MM-yyyy' }}
+            </p>
+            <p style="padding: 10px 50px 0px 0px; height: 200px; overflow: auto">
+              {{ item?.snippet.description }}
+            </p>
+          </div>
         </div>
+        <hr />
+        <p style="font-size: 20px;">
+          {{ item?.statistics.commentCount}} nhận xét
+        </p>
+        <hr />
+        <app-comment [comment]="comment"></app-comment>
       </div>
     </div>
+    <div style="width: 30%; padding-left: 100px">
+      <app-related-video [videos]="videos"></app-related-video>
+    </div>
   </div>
-  
+  <div class="text-center pt-5">
+    <button type="button" class="btn btn-primary" (click)="onClickPage()">
+      See more comment
+    </button>
+  </div>
+</div>

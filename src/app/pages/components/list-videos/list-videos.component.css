@@ -4,6 +4,11 @@
 
 .input-sort {
     border-radius: 4px;
-    height: 35px;
+    height: 38px;
     width: 150px;
+}
+
+.custom{
+    padding-left: 200px;
+    padding-bottom: 30px;
 }

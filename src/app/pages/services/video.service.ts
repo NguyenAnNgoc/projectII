@@ -9,7 +9,7 @@ export class VideoService {
   // private key = 'AIzaSyA0KNS1PgNmqQa-09bngllGCG_brwHfT6s';
   private key = 'AIzaSyC0kxyLKqKnsfOKbbXFZyghynJGc__yZj0';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getVideos(
     keySearch: string,
@@ -52,7 +52,7 @@ export class VideoService {
     });
   }
 
-  getComment(id: string, maxResults: string) {
+  getComment(id: string, maxResults: string, pageToken: string) {
     return this.http.get(this.url + 'commentThreads', {
       params: {
         key: this.key,
@@ -60,6 +60,7 @@ export class VideoService {
         part: 'snippet',
         videoId: id,
         maxResults: maxResults,
+        pageToken: pageToken
       },
     });
   }

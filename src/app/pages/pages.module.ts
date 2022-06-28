@@ -9,11 +9,13 @@ import { VideoService } from './services/video.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListVideosComponent } from './components/list-videos/list-videos.component';
 import { DetailVideoComponent } from './components/detail-video/detail-video.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { RelatedVideoComponent } from './components/related-video/related-video.component';
 
 @NgModule({
-  declarations: [HomePageComponent, SearchComponent, ListVideosComponent, DetailVideoComponent],
-  imports: [CommonModule, PagesRoutingModule, HttpClientModule,FormsModule],
-  exports: [SearchComponent],
+  declarations: [HomePageComponent, SearchComponent, ListVideosComponent, DetailVideoComponent, CommentComponent, RelatedVideoComponent],
+  imports: [CommonModule, PagesRoutingModule, HttpClientModule, FormsModule],
+  exports: [SearchComponent, CommentComponent, RelatedVideoComponent],
   providers: [VideoService],
 })
-export class PagesModule {}
+export class PagesModule { }
